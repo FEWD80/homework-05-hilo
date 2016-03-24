@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 3em;
+  padding: 0;
+}
+
+button {
+  margin-top: 10px; 
+  font-size: 14px;
+}
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#guessForm {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#guessForm input {
+  margin: 0 auto;
+  display: block;
+  font-size: 30px;
+}
+
+#guessForm button {
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.message {
+  background: #eee;
+  padding: 15px;
+  border: 2px solid #ccb;
+  margin: 10px 0;
+}
+
+.error {
+  background: #fee;
+  border-color: #c66;
+}
+
+.success {
+  background: #98fb98;
+  padding: 15px;
+  border: 2px solid green;
+}
