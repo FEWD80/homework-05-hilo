@@ -6,7 +6,7 @@ body {
 }
 
 button {
-  margin-top: 10px; 
+  margin-top: 10px;
   font-size: 14px;
 }
 
@@ -42,6 +42,7 @@ button {
 .error {
   background: #fee;
   border-color: #c66;
+  padding: 15px;
 }
 
 .success {
