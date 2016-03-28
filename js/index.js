@@ -65,5 +65,5 @@ $reset.click(function(event) {
   $guessLeft.text(choicesLeft);
   $guessInput.val('');
   $message.text('');
-  $message.removeClass('success error');
+  $message.attr('class', 'message');
 });
