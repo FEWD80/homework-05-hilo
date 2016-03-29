@@ -66,4 +66,5 @@ $reset.click(function(event) {
   $guessInput.val('');
   $message.text('');
   $message.attr('class', 'message');
+  gameOver = false;
 });
