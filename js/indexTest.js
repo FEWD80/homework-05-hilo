@@ -1,11 +1,11 @@
 
 var counter = 0;
-// var userNumber;
-// var compNumber;
+var compNumber = randomChoice();
+	console.log(compNumber);
 
-$('#guessButton').click(guessOne);
+$('#guessButton').click(guess);
 
-function guessOne(event){
+function guess(event){
 	event.preventDefault()
 	counter +=1;
 	console.log(counter);
@@ -14,14 +14,12 @@ function guessOne(event){
 	userNumber = parseInt($('#guess').val());
 	console.log(userNumber);
 
-	var compNumber = randomChoice();
-	console.log(compNumber);
-
 	if(counter < 6){
 		$('#numberOfGuessesRemaining').text('5' - counter);
 		runComparison(userNumber, compNumber);
 	} else{
-		alert('Too many guesses - you failed!');
+		$('.message').addClass('error');
+		$('.message').text('Too many guesses - you failed!');
 		$('#numberOfGuessesRemaining').text('0');
 	}
 
@@ -34,21 +32,36 @@ function runComparison(userNumber, compNumber){
 		compareNumbers(userNumber, compNumber);
 	} else{
 		console.log('invalid number');
+		alert('You must enter a number between 1 - 100');
 	}
 }
 
 function compareNumbers(userNumber, compNumber){
 	if(userNumber < compNumber){
-		alert('Higher');
+		$('.message').text('Higher');
 	} else if(userNumber > compNumber){
-		alert('Lower');
+		$('.message').text('Lower');
 	} else{
-		alert('You guessed correctly!');
+		$('.message').addClass('success');
+		$('.message').text('You guessed correctly!');
+		$('#numberOfGuessesRemaining').text('5');
 	}
 }
 
 function randomChoice(){
   return Math.floor((Math.random() * 100) + 1);
+}
+
+// <----------------RESET GUESSES--------------------> 
+
+$('#resetButton').click(resetGuesses);
+
+function resetGuesses(event){
+	var counter = 0;
+	$('#numberOfGuessesRemaining').text('5');
+	$('#guess').val("");
+	var compNumber = randomChoice();
+	console.log(compNumber);
 }
 
 
