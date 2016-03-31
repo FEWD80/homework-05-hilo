@@ -38,24 +38,44 @@ function playerGuess() {
 
 // function to validate game choice and print correct number
 function gameValidation() {
-  if (playerNumb > generatedNumber) {
-    $message.text(guessToHi);
-  } else if (playerNumb < generatedNumber) {
-    $message.text(guessToLow);
+  if (gameOver) {
+    $message.attr('class', 'error');
+    $message.text(gameOverMessage);
   } else {
-    $message.attr('class', 'success');
-    $message.text(correctGuessMessage + generatedNumber);
+    if (playerNumb > generatedNumber) {
+      $message.text(guessToHi);
+    } else if (playerNumb < generatedNumber) {
+      $message.text(guessToLow);
+    } else if (playerNumb === generatedNumber) {
+      $message.attr('class', 'success');
+      $message.text(correctGuessMessage + generatedNumber);
+      gameOver = true;
+      choicesLeft = 0;
+      $guessLeft.text(choicesLeft);
+    }
   }
+
 }
+
+// function to Check if game is over
+
 
 // start game functions on click event
 $guess.click(function(event) {
   event.preventDefault();
-  playerNumb = playerGuess();
-  $guessLeft.text(choicesLeft);
-  console.log('Player choice: ' + playerNumb);
-  gameValidation();
+  if (choicesLeft === 0) {
+    $message.text(gameOverMessage);
+    $message.attr('class', 'error');
+    $guessInput.val('');
+  } else {
+    playerNumb = playerGuess();
+    $guessLeft.text(choicesLeft);
+    console.log('Player choice: ' + playerNumb);
+    gameValidation();
+  }
+
 });
+
 
 // $guess.click(function(event) {
 //   event.preventDefault();
