@@ -39,6 +39,10 @@ button {
   margin: 10px 0;
 }
 
+.reset {
+  background: #FFF;
+}
+
 .error {
   background: #fee;
   border-color: #c66;
@@ -48,4 +52,10 @@ button {
   background: #98fb98;
   padding: 15px;
   border: 2px solid green;
+}
+
+.gameOver {
+  background: red;
+  padding: 15px;
+  border: 2px solid #000;
 }
