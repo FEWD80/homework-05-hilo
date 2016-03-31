@@ -13,10 +13,7 @@ var generatedNumber,
     correctGuessMessage = 'You win the number was ';
 var palyerNumb;
 
-<<<<<<< HEAD
 // Genertaes number with an even distrubtion
-=======
->>>>>>> Refactor-functions
 function randomNumber() {
   return Math.floor(Math.random() * (100 - 1 + 1)) + 1;
 }
@@ -42,18 +39,12 @@ function playerGuess() {
 
 // function to validate game choice and print correct number
 function gameValidation() {
-<<<<<<< HEAD
   // Checks to see if game is already completed
-=======
->>>>>>> Refactor-functions
   if (gameOver) {
     $message.attr('class', 'error');
     $message.text(gameOverMessage);
   } else {
-<<<<<<< HEAD
     // Checks to see if player number is higer lower or matches random number
-=======
->>>>>>> Refactor-functions
     if (playerNumb > generatedNumber) {
       $message.text(guessToHi);
     } else if (playerNumb < generatedNumber) {
@@ -66,7 +57,6 @@ function gameValidation() {
       $guessLeft.text(choicesLeft);
     }
   }
-<<<<<<< HEAD
 
 }
 
@@ -86,68 +76,7 @@ $guess.click(function(event) {
   }
 
 });
-// Reset button to start game over
-=======
-
-}
-
-// function to Check if game is over
-
-
-// start game functions on click event
-$guess.click(function(event) {
-  event.preventDefault();
-  if (choicesLeft === 0) {
-    $message.text(gameOverMessage);
-    $message.attr('class', 'error');
-    $guessInput.val('');
-  } else {
-    playerNumb = playerGuess();
-    $guessLeft.text(choicesLeft);
-    console.log('Player choice: ' + playerNumb);
-    gameValidation();
-  }
-
-});
-
-
-// $guess.click(function(event) {
-//   event.preventDefault();
-//   if (gameOver) {
-//     $message.text('You won already please reset game');
-//     $guessInput.val('');
-//   } else if (choicesLeft > 0) {
-//     playerChoice = parseInt($guessInput.val());
-//     console.log('Player guess: ' + playerChoice);
-//     choicesLeft--;
-//     $guessLeft.text(choicesLeft);
-//     $guessInput.val('');
-//     if (isNaN(playerChoice) || playerChoice > 100) {
-//       $message.text("Please enter a number between 1 and 100");
-//     } else if (playerChoice === generatedNumber) {
-//       $message.attr('class', 'success');
-//       $message.text(correctGuessMessage + generatedNumber);
-//       gameOver = true;
-//     } else if (playerChoice > generatedNumber) {
-//       if (choicesLeft === 0) {
-//         $message.attr('class', 'error');
-//         $message.text(gameOverMessage);
-//       } else {
-//         $message.text(guessToHi);
-//       }
-//     } else if (playerChoice < generatedNumber) {
-//       if (choicesLeft === 0) {
-//         $message.attr('class', 'error');
-//         $message.text(gameOverMessage);
-//       } else {
-//         $message.text(guessToLow);
-//       }
-//
-//     }
-//   }
-// });
-
->>>>>>> Refactor-functions
+// Reset button fucntion
 $reset.click(function(event) {
   event.preventDefault();
   generatedNumber = randomNumber();
