@@ -65,9 +65,8 @@ function gameValidation() {
 $guess.click(function(event) {
   event.preventDefault();
   if (choicesLeft === 0) {
-    $message.text(gameOverMessage);
-    $message.attr('class', 'error');
-    $guessInput.val('');
+    gameOver = true;
+    gameValidation();
   } else {
     playerNumb = playerGuess();
     $guessLeft.text(choicesLeft);
