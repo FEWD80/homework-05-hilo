@@ -5,7 +5,7 @@ var counter = 0;
 
 $(function(){
 
-// At the start of each game the app should randomly generate the secret number (it should be a whole number)
+// At the start of each game the app should randomly generate the secret number
 
 	$('#Guess').click('getRandomInt');
 
