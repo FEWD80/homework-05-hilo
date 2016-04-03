@@ -15,8 +15,6 @@ $(function(){
 			}
 
 // Users will be given 5 guesses
-// NEED TO COMPLETE THIS PART!!!!
-
 
 // If a user enters a guess and it is incorrect the following should happen:
 // A notification will be displayed informing the user that their guess was either too low or too high
