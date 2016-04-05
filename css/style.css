@@ -25,6 +25,7 @@ button {
   margin: 0 auto;
   display: block;
   font-size: 30px;
+  width: 250px;
 }
 
 #guessForm button {

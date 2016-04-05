@@ -12,15 +12,15 @@
       <p>Guess a number from 1 to 100</p>
       <h2>
         Number of Guesses remaining: 
-        <span id="numberOfGuessesRemaining">5</span>
+        <span id="numberOfGuessesRemaining"></span>
       </h2>
 
-      <div class="message"></div>
+      <div id="message"></div>
 
       <form id="guessForm">
-        <input id="guess" autofocus placeholder="enter your guess">
+        <input id="guess" type="number" min="1" max="100" autofocus placeholder="enter your guess">
 
-        <button name="Guess" value="guess">Guess</button>
+        <button id="guessButton" value="guess">Guess</button>
       </form>
 
       <button id="reset" name="Reset Game" value="reset">
