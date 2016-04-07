@@ -5,8 +5,8 @@ $(function() {
 	var guessNum;
 	var turns = 5;
 /*	var $win = $('.message p').html('Genius! You guessed it right.');
-	var $lowNotice = $('.message p').html('Sorry, number too low, guess again.');
-	var $highNotice = $('.message p').html('Sorry, number too high, guess again.');*/
+	var $lowNotice = $('.message').html('Sorry, number too low, guess again.');
+	var $highNotice = $('.message').html('Sorry, number too high, guess again.');*/
 	/*var $reset = $(“#reset”).click(humanGuess);*/
 
 	//When guess button is clicked
@@ -40,7 +40,7 @@ $(function() {
 		if (guessNum < randomNum) {
 			turns = turns - 1;
 			$('#numberOfGuessesRemaining').text(turns);
-			$('.message p').html('Sorry, number too low, guess again.');
+			$('.message p').html('<p>Sorry, number too low, guess again.</p>');
 
 		}
 
@@ -48,11 +48,11 @@ $(function() {
 
 			turns =  turns - 1;
 			$('#numberOfGuessesRemaining').text(turns);
-			$('.message p').html('Sorry, number too high, guess again.');
+			$('.message').html('<p>Sorry, number too high, guess again.</p>');
 		}
 
 		else  {
-			$('.message p').html('Genius! You guessed it right.');
+			$('.message p').html('<p>Genius! You guessed it right.</p>');
 			gameOver();
 		}
 
