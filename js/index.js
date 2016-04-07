@@ -1,7 +1,7 @@
 //At the start of each game the app should randomly generate the secret number (it should be a whole number)
 $(function() {
 
-	var randomNum;
+	var randomNum = getRandom();
 	var guessNum;
 	var turns = 5;
 /*	var $win = $('.message p').html('Genius! You guessed it right.');
@@ -10,7 +10,7 @@ $(function() {
 	/*var $reset = $(“#reset”).click(humanGuess);*/
 
 	//When guess button is clicked
-		$('#guessbtn').click(humanGuess);
+	$('#guessbtn').click(humanGuess);
 		
 	//Do Math.Random between 1-100
 	function getRandom() {
@@ -20,19 +20,20 @@ $(function() {
 	function humanGuess(event) {
 		event.preventDefault();
 
-	    // declare variable that will be used to track the number
-	    var guessNum;
+		if (turns === 0) {
+			return gameOver();
+		}
 
 	    // get information entered into the text field
 	    // convert into Integer 
 		// store number as guessNum;
 	    guessNum = parseInt($('#guess').val());
+	    console.log(guessNum);
 
 	    // clear the number entered into the text field
 	    $('#newEntry').val("")
 
 		//store math.random as randomNum
-		randomNum = getRandom();
 
 		//Compare RandomNum and GuessNum
 		//alert respective variable
@@ -40,41 +41,32 @@ $(function() {
 		if (guessNum < randomNum) {
 			turns = turns - 1;
 			$('#numberOfGuessesRemaining').text(turns);
-			$('.message p').html('<p>Sorry, number too low, guess again.</p>');
+			$('.message').text('Sorry, number too low, guess again.');
 
-		}
-
-		else if (guessNum > randomNum) {
+		} else if (guessNum > randomNum) {
 
 			turns =  turns - 1;
 			$('#numberOfGuessesRemaining').text(turns);
-			$('.message').html('<p>Sorry, number too high, guess again.</p>');
-		}
-
-		else  {
-			$('.message p').html('<p>Genius! You guessed it right.</p>');
+			$('.message').text('Sorry, number too high, guess again.');
+		} else  {
+			$('.message').text('Genius! You guessed it right.');
 			gameOver();
 		}
-
 	}
 		
-	/*
+	
 
 	function gameOver() {
-		//Keep track of turns until 0
-		if (turns = 0) {
-			alert('Game Over. Hit reset to play again');
-		}
-		
-		else {
-			humanGuess();
-		}
-			
+		$('.message').text('Game Over. Hit reset to play again.');
 	}
+
 	//on click, turns = 5
-	$('#reset').click(humanGuess);
+	$('#reset').click(reset);
 	
-	*/
+	function reset() {
+		//generate new number
+		//on click turns === 5
+	}
 
 });
 
