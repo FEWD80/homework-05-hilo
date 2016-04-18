@@ -17,13 +17,13 @@
 
 // *****START*****
 $(function() { 
-
+ 
 
 var userEntry;
 var computerEntry = getRandomNumber();
 var counter = 5;
 
-console.log(computerEntry);
+console.log(computerEntry); 
 
 function getRandomNumber() {
     return parseInt(Math.floor(Math.random() * 100) + 1);
@@ -56,7 +56,7 @@ function getUserInput(event) {
     // counter--;   ***same as the line above***
     $('#numberOfGuessesRemaining').text(counter);
 
-    if(counter === 0) {
+    if(counter < 1) {
     	alert('You suck!!!');
 } 
 
@@ -65,18 +65,17 @@ function getUserInput(event) {
 
 	$('#reset').click(resetGame);
 
-	function resetGame() {
+	function resetGame(event) {
 		event.preventDefault();
-		$('#numberOfGuessesRemaining').text(5);
+		// $('#numberOfGuessesRemaining').text(5);
 		
-	if(counter === 0) {
-		$('#numberOfGuessesRemaining').text(5);
-	} else if (counter === 0) { 	
-		$('body').css('background', 'white');
-	} else if (counter === 0) { 
-		$('.message').text(' ');
+	if(counter < 1) {
+		$('#numberOfGuessesRemaining').counter + 5;
+        $('.message').text('REFRESH THE PAGE!!!');
+        $('body').css('background', '#FEE');
 }
-}
+
+};
 
 
 	
