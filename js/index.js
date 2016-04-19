@@ -43,7 +43,7 @@ $(function() {
 			    	$('body').attr('class' , 'error');
 			    }
 		
-				if(totalGuesses <= 0){
+				if(totalGuesses < 0){
 					$('.message').html("GAME OVER: YOU LOSE!");
 					$('.message').addClass('show');
 					$('body').attr('class' , 'gameOver');
