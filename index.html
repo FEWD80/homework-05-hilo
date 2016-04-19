@@ -2,25 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>HiLo</title>
+    <title>Hi-Lo</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,500,600,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
   </head>
 
   <body>
     <div id="container">
-      <h1>HiLo</h1>
-      <p>Guess a number from 1 to 100</p>
+      <h1>Hi-Lo</h1>
+      <p><strong>Your task:</strong> guess a number from 1&mdash;100 in 5 guesses or less.</p>
       <h2>
         Number of Guesses remaining: 
-        <span id="numberOfGuessesRemaining">5</span>
+        <span id="remainingGuesses">5</span>
       </h2>
 
       <div class="message"></div>
 
       <form id="guessForm">
-        <input id="guess" autofocus placeholder="enter your guess">
+        <input id="guess" autofocus placeholder="Enter your guess">
 
-        <button name="Guess" value="guess">Guess</button>
+        <button id="submitGuess" name="Guess" value="guess">Guess</button>
       </form>
 
       <button id="reset" name="Reset Game" value="reset">
