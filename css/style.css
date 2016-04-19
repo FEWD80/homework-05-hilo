@@ -1,8 +1,34 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
   font-size: 20px;
   margin: 3em;
-  padding: 0;
+  padding: 15px;
+  border: 2px solid #666;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 60px;
+}
+
+h2 span {
+  font-size: 48px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+p {
+  margin:0;
+  font-size: 18px;
 }
 
 button {
@@ -10,8 +36,21 @@ button {
   font-size: 14px;
 }
 
+button#reset {
+  background-color: #eee;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+  margin: 30px 0;
+  border: 2px solid #bebebe;
+}
+
+button#submitGuess {
+  font-size: 800;
+}
+
 #container {
-  width: 800px;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
@@ -24,7 +63,9 @@ button {
 #guessForm input {
   margin: 0 auto;
   display: block;
-  font-size: 30px;
+  font-size: 24px;
+  border: 2px solid;
+  padding: 10px;
 }
 
 #guessForm button {
@@ -33,19 +74,32 @@ button {
 }
 
 .message {
-  background: #eee;
-  padding: 15px;
-  border: 2px solid #ccb;
+  font-family: 'Roboto', sans-serif; 
+  font-size: 24px;
+  font-weight: 900;
+  background: #F8FF33;
+  padding: 5px 15px;
+  border: 2px solid #E0B141;
   margin: 10px 0;
+  display: none;
+}
+
+.show {
+  display: inline-block;
 }
 
 .error {
-  background: #fee;
-  border-color: #c66;
+  background: #FFC83E;
 }
 
 .success {
-  background: #98fb98;
+  background: #78D46A;
   padding: 15px;
   border: 2px solid green;
+}
+
+.gameOver {
+  background: #E40000;
+  padding: 15px;
+  border: 2px solid #fff;
 }
