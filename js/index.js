@@ -12,7 +12,7 @@ var generatedNumber,
     guessToHi = 'Your guess was to high',
     guessToLow = 'Your guess was to low',
     correctGuessMessage = 'You win the number was ',
-    palyerNumb;
+    playerNumb;
 
 /******** Functions Begin *******/
 
