@@ -1,3 +1,4 @@
+/******** Global Varibles *******/
 var generatedNumber,
     playerChoice,
     choicesLeft = 5,
@@ -10,8 +11,10 @@ var generatedNumber,
     gameOverMessage = 'Game over press reset to play again',
     guessToHi = 'Your guess was to high',
     guessToLow = 'Your guess was to low',
-    correctGuessMessage = 'You win the number was ';
-var palyerNumb;
+    correctGuessMessage = 'You win the number was ',
+    palyerNumb;
+
+/******** Functions Begin *******/
 
 // Genertaes number with an even distrubtion
 function randomNumber() {
@@ -25,11 +28,14 @@ console.log('Computer number: ' + generatedNumber);
 // function decrease choicesLeft if number is valid so player wont lost turn on miss typed entry
 function playerGuess() {
   playerChoice = parseInt($guessInput.val());
-  $guessInput.val('');
+  $guessInput.val(''); // clear input field
   if (isNaN(playerChoice) || playerChoice < 1 || playerChoice > 100) {
+    // this if statement checks to see if the value is outside of paramaters
+    // and if it is a number.
     $message.attr('class', 'error');
     $message.text('Please enter a number between 1 and 100');
   } else {
+    // if number is valid decrese decrease number of tries left
     $message.attr('class', 'message');
     $message.text('');
     choicesLeft--;
