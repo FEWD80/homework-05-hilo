@@ -7,7 +7,7 @@ var generatedNumber,
     $guessLeft = $('#numberOfGuessesRemaining'),
     $guessInput = $('#guess'),
     $message = $('.message'),
-    $reset = $('#reset');
+    $reset = $('#reset'),
     gameOverMessage = 'Game over press reset to play again',
     guessToHi = 'Your guess was to high',
     guessToLow = 'Your guess was to low',
