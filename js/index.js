@@ -101,7 +101,7 @@ $('#guessForm').submit(function(event) {
 
 $('#reset').click(function(event) {
   isGameOver = false;
-  turnsLeft = 5;
+  turns.reset();
   $('#numberOfGuessesRemaining').text(turnsLeft);
   message.clear();
   generatedNumber = randomNumber();
